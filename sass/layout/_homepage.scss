@@ -1,0 +1,752 @@
+.header {
+  display: flex;
+  justify-content: flex-end;
+
+  @include respond(phone) {
+    justify-content: center;
+  }
+  .logo {
+    width: 45rem;
+    object-fit: contain;
+    padding: 3rem;
+    @include respond(phone) {
+      height: 11rem;
+      padding: 0rem 7rem;
+    }
+
+    animation: moveInRight 0.8s;
+  }
+}
+
+.main-image {
+  font-family: 'adoveFnt22-bold';
+  position: relative;
+  width: 100%;
+  overflow-y: hidden;
+  font-size: 5rem;
+
+  @include respond(mini-desktop) {
+    font-size: 4rem;
+  }
+
+  @include respond(tab-port) {
+    font-size: 3.2rem;
+  }
+
+  @include respond(phone) {
+    font-size: 4rem;
+    object-fit: cover;
+    font-size: 4rem;
+    object-position: 50%;
+    height: 60rem;
+  }
+
+  .whiteBackground {
+    @include backgroundColor($color-white);
+  }
+  .greenBackground {
+    @include backgroundColor($color-green);
+    margin-bottom: 2rem;
+  }
+  .blueBackground {
+    @include backgroundColor($color-blue);
+  }
+  .orangeBackground {
+    @include backgroundColor($color-orange);
+  }
+  .redBackground {
+    @include backgroundColor($color-red);
+  }
+  .mainColor-Background {
+    background-color: $color-primary;
+    padding: 0 1rem;
+    width: fit-content;
+    overflow-y: hidden;
+  }
+
+  &__top-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: hidden;
+    width: fit-content;
+    line-height: 8.5rem;
+    color: white;
+    padding: 0 1rem;
+    position: absolute;
+    z-index: 10;
+    top: 10%;
+    right: 50%;
+    transform: translate(50%, 0);
+    width: fit-content;
+    overflow: hidden;
+    white-space: nowrap;
+
+    animation: fadeIn 1.5s;
+
+    @include respond(small-desktop) {
+      bottom: 23%;
+    }
+
+    @include respond(mini-desktop) {
+      line-height: 7.5rem;
+    }
+    @include respond(tab-port) {
+      line-height: 6.5rem;
+    }
+
+    @include respond(phone) {
+      flex-direction: column;
+      align-items: center;
+      bottom: 21%;
+      line-height: 5rem;
+      font-size: 3rem;
+      overflow: hidden;
+    }
+    @include respond(phone-small) {
+      line-height: 5rem;
+      font-size: 2.5rem;
+      padding: 0 1rem;
+      width: auto;
+    }
+  }
+
+  &__bottom-text {
+    display: flex;
+    position: absolute;
+    z-index: 10;
+    bottom: 20%;
+    right: 50%;
+    transform: translate(50%, 0);
+    overflow-y: hidden;
+    width: fit-content;
+    line-height: 8.5rem;
+    color: white;
+
+    animation: fadeIn 1.5s;
+
+    @include respond(mini-desktop) {
+      line-height: 7.5rem;
+    }
+
+    @include respond(tab-port) {
+      line-height: 6.5rem;
+    }
+
+    @include respond(phone) {
+      line-height: 5rem;
+      font-size: 3rem;
+    }
+
+    @include respond(phone-small) {
+      line-height: 5rem;
+      font-size: 2.7rem;
+    }
+  }
+}
+
+.location-section {
+  padding: 10rem 2rem;
+  text-align: center;
+  overflow: hidden;
+
+  @include respond(phone) {
+    padding: 7rem 1rem;
+  }
+
+  &__text {
+    font-size: 6.5rem;
+    line-height: 9rem;
+    overflow: hidden;
+
+    & {
+      opacity: 0;
+      transform: translateY(50%);
+      transition: all 0.5s;
+      will-change: transform opacity;
+    }
+
+    &.is-visible {
+      opacity: 1;
+      transform: translateY(0%);
+    }
+    @include respond(tab-land) {
+      font-size: 6.2rem;
+    }
+
+    @include respond(mini-desktop) {
+      font-size: 4rem;
+      line-height: 5rem;
+      overflow: hidden;
+    }
+    @include respond(phone) {
+      font-size: 3rem;
+      line-height: 4rem;
+      overflow: hidden;
+
+      &#first {
+        opacity: 1;
+        transform: translateY(0%);
+      }
+    }
+    @include respond(phone-small) {
+      font-size: 2.7rem;
+    }
+  }
+
+  &__title {
+    font-family: 'adoveFnt22-ultrabold';
+    display: flex;
+    flex-direction: column;
+    margin: 2rem auto -3rem;
+    width: fit-content;
+    transition: all 0.2s;
+
+    &:hover {
+      transform: scale(1.03);
+    }
+
+    @include respond(phone) {
+      margin: 2rem auto 0;
+    }
+    & {
+      opacity: 0;
+      transform: translateY(50%);
+      transition: all 0.5s;
+      will-change: transform opacity;
+    }
+
+    &.is-visible {
+      opacity: 1;
+      transform: translateY(0%);
+    }
+
+    & h2 {
+      font-size: 14rem;
+      font-weight: 900;
+      margin: 0 1rem;
+
+      &.color-blue {
+        color: $color-blue;
+        font-size: 17.5rem;
+        margin-bottom: -10rem;
+        @include respond(tab-land) {
+          font-size: 17rem;
+        }
+
+        @include respond(mini-desktop) {
+          font-size: 10.5rem;
+          margin-bottom: -5rem;
+        }
+
+        @include respond(phone) {
+          font-size: 8rem;
+        }
+        @include respond(phone-small) {
+          font-size: 5.5rem;
+          margin-bottom: -3rem;
+        }
+      }
+      &.color-red {
+        color: $color-red;
+        font-size: 15.5rem;
+        @include respond(tab-land) {
+          font-size: 15rem;
+        }
+
+        @include respond(mini-desktop) {
+          font-size: 9rem;
+        }
+
+        @include respond(phone) {
+          font-size: 7rem;
+        }
+        @include respond(phone-small) {
+          font-size: 5rem;
+        }
+      }
+    }
+  }
+}
+
+.contact-us-section {
+  font-family: 'adoveFnt22-bold';
+  padding: 6rem 0 6rem;
+  @include respond(phone) {
+    padding: 8rem 0 0;
+
+    &#grey {
+      padding: 8rem 0;
+    }
+  }
+
+  & p {
+    font-size: 6rem;
+    margin-bottom: 4rem;
+    @include respond(phone) {
+      font-size: 3.5rem;
+      margin-bottom: 2rem;
+    }
+    @include respond(phone-small) {
+      font-size: 3rem;
+    }
+  }
+
+  &-title {
+    font-size: 4rem;
+    text-align: center;
+
+    &-head {
+      font-size: 7rem;
+      margin-bottom: 3rem;
+      text-align: center;
+      @include respond(small-desktop) {
+        font-size: 5.8rem;
+        line-height: 7rem;
+        overflow: hidden;
+      }
+
+      @include respond(tab-land) {
+        font-size: 5rem;
+        line-height: 6rem;
+        overflow: hidden;
+      }
+      @include respond(tab-port) {
+        font-size: 3.5rem;
+        line-height: 5rem;
+        padding: 0 3rem;
+        overflow: hidden;
+      }
+      @include respond(phone-small) {
+        font-size: 3rem;
+        line-height: 4rem;
+      }
+    }
+  }
+  &#grey {
+    background-color: $color-grey-light-1;
+  }
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 60rem;
+  margin: auto;
+  @include respond(phone) {
+    width: 85vw;
+  }
+
+  &-input {
+    @include inputBasic;
+
+    color: $color-secondary;
+
+    &:focus {
+      outline: 0;
+    }
+
+    &:hover::placeholder {
+      color: $color-secondary;
+    }
+  }
+  &-submit {
+    @include submitBasic($color-green);
+    @include shine($color-green);
+    &:hover {
+      @include buttonHover;
+    }
+  }
+
+  &-bottom {
+    display: flex;
+    .left {
+      width: 70%;
+      text-align: center;
+      margin-left: 0rem;
+      padding-top: 7rem;
+      @include respond(mini-desktop) {
+        margin-left: 5rem;
+      }
+      @include respond(tab-port) {
+        width: 100%;
+        margin-left: 0;
+        padding-top: 2rem;
+      }
+    }
+    .right {
+      width: 30%;
+      @include respond(mini-desktop) {
+        width: 45%;
+      }
+      @include respond(tab-port) {
+        width: 0%;
+      }
+
+      .smiley.inline-photo {
+        width: 100%;
+        transform: translateX(100%);
+        transition: transform 0.5s;
+        will-change: transform;
+      }
+
+      .smiley.inline-photo.is-visible {
+        transform: translateX(0%);
+      }
+    }
+
+    &-input {
+      @include inputBasic;
+      color: $color-black;
+      background-color: $color-primary-part-transparent;
+
+      &:focus {
+        outline: 0;
+      }
+
+      &::placeholder {
+        color: $color-primary-dark;
+      }
+
+      &:hover::placeholder {
+        color: $color-black;
+      }
+    }
+    &-submit {
+      @include submitBasic($color-primary-dark);
+      @include shine($color-primary-dark);
+      &:hover {
+        @include buttonHover;
+      }
+    }
+  }
+}
+
+.about-setion {
+  padding: 10rem 7rem;
+  text-align-last: center;
+
+  @include respond(phone) {
+    padding: 10rem 0rem;
+  }
+
+  &__info {
+    margin: auto;
+    font-size: 4.5rem;
+    min-width: 90rem;
+    max-width: 112rem;
+    & {
+      transform: translateY(40%);
+      opacity: 0;
+      transition: all 0.5s;
+      will-change: transform opacity;
+    }
+
+    &.is-visible {
+      transform: translateY(0%);
+      opacity: 1;
+    }
+
+    @include respond(mini-desktop) {
+      min-width: 0;
+      max-width: 95vw;
+    }
+
+    @include respond(phone) {
+      text-align: center;
+      font-size: 2.5rem;
+      min-width: 0;
+      max-width: 97vw;
+    }
+
+    &:first-child {
+      margin-bottom: 7rem;
+    }
+
+    &:hover &-title {
+      background-position: 0 -100%;
+    }
+
+    &-title {
+      font-family: 'adoveFnt22-bold';
+
+      font-size: 5rem;
+      position: relative;
+      display: inline-block;
+      color: $color-primary-dark;
+      background: linear-gradient(
+        to right,
+        $color-primary-dark,
+        $color-primary-dark 50%,
+        black 50%
+      );
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-size: 200% 100%;
+      background-position: -100%;
+      overflow: hidden;
+      transition: background-position 275ms ease;
+      text-decoration: none; // text decorations are clipped in WebKit browsers
+
+      @include respond(phone) {
+        font-size: 3.4rem;
+        letter-spacing: -0.1rem;
+      }
+    }
+
+    &-text {
+      width: 100%;
+      text-align: -webkit-center;
+
+      @include respond(phone) {
+        font-size: 2.5rem;
+        line-height: 4rem;
+        overflow: hidden;
+        padding: 0rem 3rem;
+      }
+
+      & span.bold {
+        font-family: 'adoveFnt22-bold';
+        padding: 0;
+      }
+
+      &-newlineOnMobile {
+        @include respond(phone) {
+          &::before {
+            content: '\A';
+            white-space: pre-line;
+          }
+        }
+      }
+    }
+  }
+}
+
+.pros-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10rem 7rem 12rem;
+  background-color: $color-black;
+  color: $color-white;
+  overflow: auto;
+
+  @include respond(phone) {
+    font-weight: bold;
+    background-color: $color-grey-light-1;
+    color: $color-black;
+    padding: 6rem 1rem;
+  }
+
+  &-title {
+    font-family: 'adoveFnt22-bold';
+    color: $color-primary-dark;
+    font-size: 9rem;
+    margin-bottom: 4rem;
+
+    & {
+      transform: translateY(10%);
+      opacity: 0;
+      transition: all 0.5s;
+      will-change: transform opacity;
+    }
+
+    &.is-visible {
+      transform: translateY(0%);
+      opacity: 1;
+    }
+
+    @include respond(small-desktop) {
+      font-size: 7rem;
+    }
+
+    @include respond(tab-land) {
+      font-size: 7rem;
+    }
+    @include respond(mini-desktop) {
+      font-size: 7rem;
+    }
+    @include respond(tab-port) {
+      font-size: 5rem;
+    }
+
+    @include respond(phone) {
+      font-size: 4rem;
+      align-self: center;
+    }
+
+    &-span {
+      //   transform: translateY(100%);
+      opacity: 0;
+      transition: all 0.5s;
+      transition-delay: 0.5s;
+      will-change: transform opacity;
+
+      &.is-visible {
+        transform: translateY(0%);
+        opacity: 1;
+      }
+    }
+  }
+
+  &-list {
+    display: flex;
+    flex-direction: column;
+
+    @include respond(phone) {
+      display: flex;
+      flex-direction: column;
+      padding: 0 1rem;
+    }
+
+    &__item {
+      display: flex;
+      align-items: center;
+      position: relative;
+      margin: 1rem 0;
+      float: left;
+      text-align: center;
+      align-items: start;
+
+      font-size: 4.5rem;
+
+      @include respond(small-desktop) {
+        font-size: 3.5rem;
+      }
+
+      @include respond(tab-land) {
+        font-size: 3rem;
+      }
+
+      @include respond(mini-desktop) {
+        font-size: 3.5rem;
+      }
+      @include respond(tab-port) {
+        font-size: 2.5rem;
+      }
+
+      @include respond(phone) {
+        margin: 0;
+        flex-direction: column-reverse;
+        font-size: 2.6rem;
+        align-items: center;
+
+        &:last-child &-smile-outer {
+          display: none;
+        }
+      }
+
+      &:hover &-smile-inner {
+        color: $color-primary-dark;
+      }
+      &:hover &-smile-outer {
+        transform: rotate(-25deg);
+      }
+
+      &-smile-outer {
+        position: relative;
+        width: 6rem;
+        height: 3rem;
+        overflow: hidden;
+        background-color: black;
+        margin-left: 5rem;
+        margin-top: 2.4%;
+
+        transition: all 0.2s;
+
+        @include respond(mini-desktop) {
+          width: 4rem;
+          height: 2rem;
+        }
+
+        @include respond(phone) {
+          width: 4rem;
+          height: 2rem;
+
+          margin: 3rem 0;
+          background-color: $color-grey-light-1;
+          color: $color-white;
+        }
+      }
+      &-smile-inner {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 6rem;
+        height: 6rem;
+        border-radius: 50%;
+        box-sizing: border-box;
+        border: 10px solid;
+        transition: all 0.2s;
+        @include respond(mini-desktop) {
+          width: 4rem;
+          height: 4rem;
+          border: 6px solid;
+        }
+        @include respond(phone) {
+          width: 4rem;
+          height: 4rem;
+        }
+      }
+      &-flex {
+        display: flex;
+        flex-direction: column;
+        text-align: start;
+        @include respond(phone) {
+          text-align: center;
+        }
+      }
+      &-mobile-flex {
+        @include respond(phone) {
+          display: flex;
+          flex-direction: column;
+        }
+      }
+      &-span {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.footer {
+  width: 50%;
+  margin-top: -10px;
+  margin-right: auto;
+  margin-bottom: 6rem;
+
+  @include respond(tab-port) {
+    width: 100vw;
+    margin-top: -2rem;
+    margin-bottom: 0rem;
+    display: flex;
+  }
+
+  &-logo {
+    @include respond(tab-port) {
+      width: 56%;
+      object-fit: contain;
+    }
+  }
+
+  .smiley {
+    @include respond(tab-port) {
+      width: 40%;
+      object-fit: contain;
+    }
+  }
+}
+
+.desktop {
+  display: block;
+
+  @include respond(tab-port) {
+    display: none;
+  }
+}
+.mobile {
+  display: none;
+  @include respond(tab-port) {
+    display: block;
+  }
+}
